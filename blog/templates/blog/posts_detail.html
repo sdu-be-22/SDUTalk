@@ -1,0 +1,14 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+{{user.username}}'s Blog
+{% endblock %}
+
+{% block content %}
+<div class = "alert alert-warning">
+                    <h3>{{post.title}}</h3>
+                    <p>{{post.full_text}}</p>
+                    <h3>{{post.date}}</h3>
+                    <a href="{%url 'post_delete' post.author post.id %}" class = "btn btn-danger">Delete</a>
+                </div>
+{% endblock%}

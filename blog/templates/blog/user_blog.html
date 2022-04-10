@@ -1,0 +1,25 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+{{user.username}}'s Blog
+{% endblock %}
+
+{% block content %}
+ <center class="features" style = "width: 300px; margin: 0 auto;">
+    <h1>Your Blog</h1>
+        {% if posts %}
+          <br>
+            {% for el in posts%}
+                {%if el.author == user.username%}
+              <div class = "alert alert-warning">
+                    <h3>{{el.title}}</h3>
+                    <a href="{% url 'post_detail' el.author el.id%}" class = "btn btn-warning">Details</a>
+                </div>
+                {%endif%}
+            {% endfor %}
+        {% else %}
+            <p>No Post here!</p>
+        {% endif %}
+
+    </center>
+{% endblock%}

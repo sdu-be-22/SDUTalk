@@ -1,0 +1,20 @@
+{% extends 'main/layout.html' %}
+{% block title %}
+Registration Page
+{% endblock %}
+
+{% block content %}
+
+<center style = "margin: 100px auto 0 auto; border: 2px solid black; border-radius: 50px; background-color: rgb(206, 218, 238); width: 400px; padding: 50px 0 50px 0">
+    <h1>Registration Form</h1>
+
+    <form method="post" style = "width: 200px; text-align: left">
+        {% csrf_token %}
+        {% for f in form %}
+        <p><label class = "form-label" for="{{f.id_for_label}}">{{f.label}}:</label> {{f}}</p>
+        <div class="form-error">{{f.errors}}</div>
+        {% endfor %}
+        <button class = "btn btn-success" style = "width: 190px"> Confirm Registration </button>
+    </form>
+</center>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Search Page
+{% endblock %}
+
+{% block content %}
+<center>
+    {% if searched%}
+        <h1>You searched for {{searched}} :</h1>
+            {% if results %}
+                {% for el in results%}
+                    <a href="{% url 'post_detail' el.author el.id%}"><h3>{{el}}</h3></a>
+                {%endfor%}
+            {% else %}
+                <h1>No result</h1>
+            {% endif%}
+    {% else %}
+            <h1 style = "font-size: 70px; margin-top: 250px">Nothing to search</h1>
+{% endif %}
+</center>
+
+{% endblock %}

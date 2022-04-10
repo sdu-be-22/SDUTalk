@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Post Create
+{% endblock %}
+
+{% block content %}
+    <center style = "margin-top: 50px">
+          <form method="POST">
+        {% csrf_token %}
+        Title: {{ form.title }}<br>
+        Text: {{ form.full_text }}<br>
+
+        <button class = "btn btn-success" type = "submit">Add Article</button>
+    </form>
+    </center>
+
+
+{% endblock%}

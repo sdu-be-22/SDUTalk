@@ -1,0 +1,19 @@
+{% extends 'main/layout.html' %}
+
+{% block title %}
+Post Delete
+{% endblock %}
+{% block content %}
+<form method="Post">
+        {% csrf_token %}
+          <h1>Delete Post</h1>
+        <h2>Are you sure you want to delete the post "{{ object.title }}"</h2>
+
+                <div class="form-group">
+                <button class="btn btn-outline-danger" type="submit">Yes, Delete</button>
+                <a class="btn btn-outline-secondary" href="{% url 'post_detail' object.author object.id%}">Cancel</a>
+            </div>
+</form>
+
+
+{% endblock content %}

@@ -1,0 +1,29 @@
+body {
+    background-image: url('backg.jpg');
+  }
+.top-nav{
+    background: peachpuff;
+    display: flex;
+    align-content: space-between;
+}
+.tabs{
+    padding-top: 8px;
+}
+.tabs ul{
+    display: flex;
+    align-items: center;
+    margin-left: 650px;
+}
+.logo h1{
+    font-family: 'Fredoka', sans-serif;
+    color: cornflowerblue;
+    margin-left: 25px;
+}
+
+a{
+    text-decoration: none;
+}
+li{
+    padding: 0 10px;
+    list-style-type: none;
+}
