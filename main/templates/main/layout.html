@@ -33,7 +33,7 @@
                 {% if request.user.is_authenticated %}
                 <li><a href="{% url 'post_create' %}"><button class = "btn btn-info"><i class = "fas fa-plus-circle"></i>Add Post</button></a></li>
                 <li><a href="{% url 'blog_home' user.username%}"><button class = "btn btn-success">Posts</button></a></li>
-                   <li>{{user.username}} | <a href="{% url 'logout' %}"> Exit</a></li>
+                   <li><a href="{% url 'profile'%}">{{user.username}} </a>| <a href="{% url 'logout' %}"> Exit</a></li>
                 {% else %}
                 <li><a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Sign Up</a></li>
                 {% endif %}
