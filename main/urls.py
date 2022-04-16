@@ -1,12 +1,12 @@
 from django.urls import path, include
 from django.contrib.auth import views as auth_views
-from .views import RegisterUser, LoginUser, BlogListView, logout_user, search
+from .views import register, LoginUser, BlogListView, logout_user, search
 from account import views as user_views
 
 
 urlpatterns = [
     path('', BlogListView.as_view(), name = 'home'),
-    path('register/', RegisterUser.as_view(), name = 'register'),
+    path('register/', register, name = 'register'),
     path('login/', LoginUser.as_view(), name='login'),
     path('logout/', logout_user, name='logout'),
     path('blog/', include('blog.urls')),
