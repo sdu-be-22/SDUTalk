@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import logout, login
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.views import LoginView
@@ -5,10 +6,10 @@ from django.shortcuts import render, redirect
 from django.urls import reverse_lazy
 from django.views.generic import DetailView, UpdateView, DeleteView, CreateView, ListView
 
-from .forms import LoginUserForm, RegisterUserForm
+from .forms import LoginUserForm
 
 from django.apps import apps
-
+from .forms import UserRegisterForm
 
 class BlogListView(ListView):
     model = apps.get_model('blog', 'Posts')
@@ -17,15 +18,18 @@ class BlogListView(ListView):
 
     ordering = ['-date']
 
-class RegisterUser(CreateView):
-    form_class = RegisterUserForm
-    template_name = 'main/register.html'
-    success_url = reverse_lazy('home')
+def register(request):
+    if request.method == "POST":
+        form = UserRegisterForm(request.POST)
+        if form.is_valid():
+            form.save()
+            username = form.cleaned_data.get('username')
+            messages.success(request, f'Your account has been created! You are able now to log in!')
+            return redirect('login')
 
-    def form_valid(self, form):
-        user = form.save()
-        login(self.request, user)
-        return redirect('home')
+    else:
+        form = UserRegisterForm()
+    return render(request, 'main/register.html', {'form': form})
 
 class LoginUser(LoginView):
     form_class = LoginUserForm
