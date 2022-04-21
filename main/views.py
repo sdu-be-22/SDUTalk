@@ -50,4 +50,3 @@ def search(request):
         return render(request, 'main/search.html', {'searched' : searched, 'results' : results})
     else:
         return render(request, 'main/search.html', {})
-
