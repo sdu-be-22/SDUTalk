@@ -1,5 +1,5 @@
 body {
-    background-image: url('../img/backg.jpg');
+    background-image: url('backg.jpg');
 
   }
 
@@ -60,7 +60,17 @@ a.article-title:hover {
 .article-content {
   white-space: pre-line;
 }
+.article-metadata {
+    width: 460px;
+  padding-bottom: 1px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid #e3e3e3
+}
 
+.article-metadata a:hover {
+  color: #333;
+  text-decoration: none;
+}
 
 .bg-steel {
   background-color: #5f788a;
