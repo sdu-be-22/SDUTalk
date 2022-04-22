@@ -3,32 +3,22 @@
 {% block title %}
 Main Page
 {% endblock %}
-{% block css%}
-<link rel="stylesheet" href="{% static 'main/css/main_page.css'%}">
-{% endblock %}
 {% block content %}
-<div class="features">
-    <h1 class="h11">New Posts</h1>
-        {% if posts %}
-            {% for el in posts%}
-                {%if el.author != user.username%}
-              <div class = "alert alert-warning bloki">
-                <h1>{{el.title}}</h1>
-                    {% if el.full_text|length > 500 %}
-                        {{el.full_text|slice:"500"}}...
+ {% for post in posts %}
+        <article class="media content-section">
+          <div class="media-body">
+            <div class="article-metadata">
+              <a class="mr-2" href="#">{{ post.author }}</a>
+                <small class="text-muted" title = "{{post.date}}">· {{ post.date|date:"F"|slice:"3" }} {{ post.date|date:"d" }}</small>
+            </div>
+            <h2><a class="article-title" href="#">{{ post.title }}</a></h2>
+            <p class="article-content"> {% if post.full_text|length > 500 %}
+                        {{post.full_text|slice:"500"}}...
                     {% else %}
-                        {{el.full_text}}
-                    {% endif %}
-                  <br>
-                  <br>
-                    <a href="{% url 'post_detail' el.author el.id%}" class = "btn btn-warning">Details</a>
-                    <p style = "width: 200px;margin: 0 0 0 350px; text-align: center;">{{el.date}}</p>
-                </div>
-                {%endif%}
-            {% endfor %}
-        {% else %}
-            <h2>No Post here!</h2>
-        {% endif %}
+                        {{post.full_text}}
+                    {% endif %}</p>
+          </div>
+        </article>
+    {% endfor %}
 
-    </div>
 {% endblock %}

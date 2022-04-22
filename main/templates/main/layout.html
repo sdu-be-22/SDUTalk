@@ -1,5 +1,5 @@
 {% load static %}
-<!doctype html>
+
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -16,30 +16,48 @@
     {% block css %}{% endblock %}
 </head>
 <body>
-    <div class="top-nav">
-        <div class="logo">
-            <a href="{% url 'home'%}"><h1>SduTalk</h1></a>
-        </div>
-        <div class="tabs">
-            <ul>
+    <header class="site-header">
+      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+        <div class="container">
+          <a class="navbar-brand mr-4 logo" href="{% url 'home' %}"><img class = "logo-img" src="{% static 'main/img/logo.png' %}" alt=""></a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarToggle">
+            <div class="navbar-nav mr-auto">
+            </div>
 
-                <li>
-                    <form method="POST" action = "{% url 'search' %}">
-                        {% csrf_token %}
-                        <input type="text" placeholder="Search post.." name = "searched">
-                        <button class = "btn btn-success">Search</button>
-                    </form>
-                </li>
-                {% if request.user.is_authenticated %}
-                <li><a href="{% url 'post_create' %}"><button class = "btn btn-info"><i class = "fas fa-plus-circle"></i>Add Post</button></a></li>
-                <li><a href="{% url 'blog_home' user.username%}"><button class = "btn btn-success">Posts</button></a></li>
-                   <li><a href="{% url 'profile'%}">{{user.username}} </a>| <a href="{% url 'logout' %}"> Exit</a></li>
-                {% else %}
-                <li><a href="{% url 'login' %}">Login</a> | <a href="{% url 'register' %}">Sign Up</a></li>
-                {% endif %}
-            </ul>
+            <div class="navbar-nav nav99">
+                <form method="POST" action = "{% url 'search' %}">
+                    {% csrf_token %}
+                <div class="input-group search-bar">
+
+                  <input type="search" class="form-control rounded search-field" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name = "searched" />
+                    <button class="btn btn-outline-primary search-btn">search</button>
+                </div>
+                     </form>
+
+              {% if user.is_authenticated %}
+                    <div class="dropdown">
+                    <a class="dropbtn" onclick="myFunction()"> <img class="rounded-circle nav-account-img" src="{{user.profile.image.url}}">
+                      <i class="fa fa-caret-down"></i>
+                    </a>
+                    <div id = "myDropdown" class="dropdown-content">
+                        <a href="{% url 'profile' %}">Profile</a>
+                      <a href="{% url 'post_create' %}">Add Post</a>
+                      <a href="#">Link 3</a>
+                    </div>
+                  </div>
+                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+              {% else %}
+                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+              {% endif %}
+            </div>
+          </div>
         </div>
-    </div>
+      </nav>
+    </header>
 <main>
      {% if messages %}
         {% for message in messages %}
@@ -51,5 +69,26 @@
     {% block content %}
         {% endblock %}
 </main>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script>
+        function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+    </script>
 </body>
 </html>

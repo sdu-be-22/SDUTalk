@@ -1,23 +1,11 @@
 body {
-    background-image: url('backg.jpg');
+    background-image: url('../img/backg.jpg');
+
   }
-.top-nav{
-    background: peachpuff;
-    display: flex;
-    align-content: space-between;
-}
-.tabs{
-    padding-top: 8px;
-}
-.tabs ul{
-    display: flex;
-    align-items: center;
-    margin-left: 650px;
-}
-.logo h1{
-    font-family: 'Fredoka', sans-serif;
-    color: cornflowerblue;
-    margin-left: 25px;
+
+
+ul {
+  margin: 0;
 }
 
 a{
@@ -36,7 +24,7 @@ li{
 .content-section {
     margin: 75px auto 0 auto;
     width: 500px;
-    height: 400px;
+
   background: #ffff;
   padding: 10px 20px;
   border: 3px solid #dddddd;
@@ -51,4 +39,114 @@ li{
 }
 .account-heading {
   font-size: 2.5rem;
+}
+.content-section {
+  background: #ffffff;
+  padding: 10px 20px;
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  margin-bottom: 20px;
+}
+
+.article-title {
+  color: #444444;
+}
+
+a.article-title:hover {
+  color: #428bca;
+  text-decoration: none;
+}
+
+.article-content {
+  white-space: pre-line;
+}
+
+
+.bg-steel {
+  background-color: #5f788a;
+    overflow: visible;
+}
+
+.site-header .navbar-nav .nav-link {
+  color: #cbd5db;
+}
+
+.site-header .navbar-nav .nav-link:hover {
+  color: #ffffff;
+}
+
+.site-header .navbar-nav .nav-link.active {
+  font-weight: 500;
+}
+.navbar-collapse{
+    justify-content: space-between;
+}
+.logo-img{
+    height: 27px;
+    cursor: pointer;
+}
+.search-btn{
+    background-color: white;
+    height: 35px;
+    margin-right: 20px;
+}
+.search-field{
+    height: 35px;
+}
+.nav99{
+     align-content: center;
+}
+.search-bar{
+ align-content: center;
+}
+.dropdown {
+  float: left;
+  overflow: visible;
+}
+.dropdown .dropbtn {
+  font-size: 17px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+    cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:active {
+  background-color: #ddd;
+  color: black;
+}
+
+.show {
+  display: block;
+}
+.nav-account-img{
+    height: 40px;
+    width: 40px;
+}
+
+
+@media screen and (max-width: 767.5px) {
+    .search-bar{
+    margin-top: 20px;
+}
 }
