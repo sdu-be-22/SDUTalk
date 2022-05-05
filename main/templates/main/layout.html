@@ -16,29 +16,35 @@
     {% block css %}{% endblock %}
 </head>
 <body>
-    <header class="site-header">
-      <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
+<header class="site-header">
+    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
         <div class="container">
-          <a class="navbar-brand mr-4 logo" href="{% url 'home' %}"><img style="height: 50px" class = "logo-img" src="{% static 'main/img/logo.png' %}" alt=""></a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarToggle">
-            <div class="navbar-nav mr-auto">
-            </div>
-
-            <div class="navbar-nav nav99">
-                <form method="POST" action = "{% url 'search' %}">
-                    {% csrf_token %}
-                <div class="input-group search-bar">
-
-                  <input type="search" class="form-control rounded search-field" placeholder="Search" aria-label="Search" aria-describedby="search-addon" name = "searched" />
-                    <button style="margin-right: 40px"  class="btn btn-outline-primary search-btn"><i class="fas fa-search"></i></button>
+            <a class="navbar-brand mr-4 logo" href="{% url 'home' %}"><img style="height: 50px" class="logo-img"
+                                                                           src="{% static 'main/img/logo.png' %}"
+                                                                           alt=""></a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+                    aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarToggle">
+                <div class="navbar-nav mr-auto">
                 </div>
-                     </form>
 
-              {% if user.is_authenticated %}
+                <div class="navbar-nav nav99">
+                    <form method="POST" action="{% url 'search' %}">
+                        {% csrf_token %}
+                        <div class="input-group search-bar">
+
+                            <input type="search" class="form-control rounded search-field" placeholder="Search"
+                                   aria-label="Search" aria-describedby="search-addon" name="searched"/>
+                            <button style="margin-right: 40px" class="btn btn-outline-primary search-btn"><i
+                                    class="fas fa-search"></i></button>
+                        </div>
+                    </form>
+
+                    {% if user.is_authenticated %}
                     <div class="dropdown">
+<<<<<<< HEAD
                     <a class="dropbtn" onclick="myFunction()"> <img class="rounded-circle nav-account-img" src="{{user.profile.image.url}}">
                       <i class="fa fa-caret-down"></i>
                     </a>
@@ -52,31 +58,52 @@
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
               {% endif %}
+=======
+                        <a class="dropbtn" onclick="myFunction()"> <img class="rounded-circle nav-account-img"
+                                                                        src="{{user.profile.image.url}}">
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                        <div id="myDropdown" class="dropdown-content">
+                            <a href="{% url 'profile' %}">Profile</a>
+                            <a href="{% url 'post_create' %}">Add Post</a>
+                            <a class="logout" href="{% url 'logout' %}">Logout</a>
+                        </div>
+                    </div>
+                    {% else %}
+                    <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                    <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    {% endif %}
+                </div>
+>>>>>>> 098261feddc33ca6cf4f788f1c7e614588812490
             </div>
-          </div>
         </div>
-      </nav>
-    </header>
+    </nav>
+</header>
 <main>
-     {% if messages %}
-        {% for message in messages %}
-            <div class="alert alert-{{ message.tags }}">
-                    {{ message }}
-            </div>
-                {% endfor %}
+    {% if messages %}
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }}">
+        {{ message }}
+    </div>
+    {% endfor %}
     {% endif %}
     {% block content %}
-        {% endblock %}
+    {% endblock %}
 </main>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<script>
         function myFunction() {
   document.getElementById("myDropdown").classList.toggle("show");
 }
-
-window.onclick = function(event) {
+        window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
     var dropdowns = document.getElementsByClassName("dropdown-content");
     var i;
@@ -88,6 +115,7 @@ window.onclick = function(event) {
     }
   }
 }
-    </script>
+
+</script>
 </body>
 </html>

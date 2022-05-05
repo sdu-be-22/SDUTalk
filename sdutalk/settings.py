@@ -139,7 +139,14 @@ CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
+<<<<<<< HEAD
 EMAIL_PORT = 465
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'sdutalkreset@gmail.com'
 EMAIL_HOST_PASSWORD = 'pkcqnsgxmyxobejp'
+=======
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER = 'sdutalkreset@gmail.com'
+EMAIL_HOST_PASSWORD = 'SdutalkReset123'
+>>>>>>> 098261feddc33ca6cf4f788f1c7e614588812490
