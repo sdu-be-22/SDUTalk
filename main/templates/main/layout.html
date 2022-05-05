@@ -44,11 +44,10 @@
                     </a>
                     <div id = "myDropdown" class="dropdown-content">
                         <a href="{% url 'profile' %}">Profile</a>
-                      <a href="{% url 'post_create' %}">Add Post</a>
-                      <a href="#">Link 3</a>
+                        <a href="{% url 'post_create' %}">Add Post</a>
+                        <a class="logout" href="{% url 'logout' %}">Logout</a>
                     </div>
                   </div>
-                <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
               {% else %}
                 <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
                 <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>

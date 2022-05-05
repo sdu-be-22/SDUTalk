@@ -14,13 +14,13 @@
           </div>
           <form method="POST" enctype="multipart/form-data">
            {% csrf_token %}
-           <fieldset class="form-group">
-               <legend class="border-bottom mb-4">Profile Info</legend>
+           <fieldset class="form-group" >
+               <legend class="border-bottom mb-4" style = "padding: 10px 10px 10px 10px">Profile Info</legend>
                {{ u_form|crispy }}
                {{ p_form|crispy }}
            </fieldset>
            <div class="form-group">
-               <button class="btn btn-outline-info" type="submit">Update</button>
+               <button class="btn btn-outline-info" style = "margin-top: 20px" type="submit">Update</button>
                 </div>
         </form>
         </div>

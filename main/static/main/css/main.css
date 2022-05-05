@@ -143,9 +143,12 @@ a.article-title:hover {
 
 .dropdown-content a:active {
   background-color: #ddd;
-  color: black;
+  color: darkred;
 }
-
+a.logout{
+    background-color: red;
+        color: #ffffff;
+}
 .show {
   display: block;
 }
