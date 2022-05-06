@@ -14,6 +14,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
     {% block css %}{% endblock %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
 <header style="height: 40px" class="site-header">
@@ -35,9 +39,9 @@
                         {% csrf_token %}
                         <div class="input-group search-bar">
 
-                            <input style="top:4px" type="search" class="form-control rounded search-field" placeholder="Search..."
+                            <input style="top:3px" type="search" class="form-control rounded search-field" placeholder="Search..."
                                    aria-label="Search" aria-describedby="search-addon" name="searched"/>
-                            <button style="margin-right: 40px; top: 4px" class="btn btn-outline-primary search-btn"><i
+                            <button style="margin-right: 40px; top: 3px" class="btn btn-outline-primary search-btn"><i
                                     class="fas fa-search"></i></button>
                         </div>
                     </form>
@@ -73,7 +77,15 @@
     {% endif %}
     {% block content %}
     {% endblock %}
+    <footer>
+        <div class="footer-content">
+            <h3>SDUTalk</h3>
+            <p>copyright &copy;2022 | <a href="https://github.com/sdu-be-22/SDUTalk">SDUTalkdevelopers</a></p>
+        </div>
+    </footer>
+
 </main>
+
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
         crossorigin="anonymous"></script>
