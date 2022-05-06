@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block content %}
-<div class = "alert alert-warning">
-                    <h3>{{post.title}}</h3>
+<div style="margin: 60px 20% auto 20%; background-color: #d1deef" class = "alert ">
+                    <h2 style="">{{post.title}}</h2>
                     <p>{{post.full_text}}</p>
-                    <h3>{{post.date}}</h3>
+                    <h4 style="float: right">{{post.date}}</h4>
                     <a href="{%url 'post_delete' post.author post.id %}" class = "btn btn-danger">Delete</a>
                 </div>
 {% endblock%}

@@ -1,19 +1,21 @@
 {% extends 'main/layout.html' %}
-
+{% load crispy_forms_tags %}
 {% block title %}
 Post Create
 {% endblock %}
 
 {% block content %}
-    <center style = "margin-top: 150px">
-          <form method="POST">
-        {% csrf_token %}
-        Title: {{ form.title }}<br>
-        Text: {{ form.full_text }}<br>
-
-        <button class = "btn btn-success" type = "submit">Add Article</button>
-    </form>
-    </center>
-
+<div class="add_post" style="padding: 15px; margin: 75px auto 0 auto; width: 700; background-color: #d1deef">
+    <div class="div1" style="padding: 15px">
+        <h1>Create New Post</h1>
+    </div>
+    <div class = "alert ">
+        <form method="POST" action="" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form|crispy }}
+        </form>
+        <input type="submit" class="btn btn-success" value="Create Post">
+    </div>
+</div>
 
 {% endblock%}

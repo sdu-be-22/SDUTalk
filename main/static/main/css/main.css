@@ -161,4 +161,29 @@ a.logout{
     .search-bar{
     margin-top: 20px;
 }
+.content-section{
+    margin-top: 150px;
+    width: 80%;
+}
+.content-section .media {
+    font-size:10px;
+}
+.article-content{
+    max-width: 80%;
+}
+.add_post {
+    margin: 50px
+}
+.add_post .alert {
+    width: 50%;
+}
+.add_post .div1 {
+    width: 50%;
+}
+}
+
+@media screen and (max-width: 600.5px) {
+.article-content{
+    max-width: 60%;
+}
 }

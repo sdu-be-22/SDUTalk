@@ -7,7 +7,7 @@ Search Page
 {% block content %}
 <center>
     {% if searched%}
-        <h1>You searched for {{searched}} :</h1>
+        <h1 style="margin-top: 60px">You searched for "{{searched}}" :</h1>
             {% if results %}
                 {% for el in results%}
                     <a href="{% url 'post_detail' el.author el.id%}"><h3 style="margin-top: 45px">{{el}}</h3></a>
