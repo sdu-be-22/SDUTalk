@@ -50,3 +50,9 @@ def search(request):
         return render(request, 'main/search.html', {'searched' : searched, 'results' : results})
     else:
         return render(request, 'main/search.html', {})
+
+
+def profile_of(request, username):
+    posts = apps.get_model('blog', 'Posts').objects.all()
+
+    return render(request, 'main/profile_of.html', {'name': username, 'posts': posts })

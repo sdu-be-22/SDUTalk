@@ -7,6 +7,12 @@ from django import forms
 class UserRegisterForm(UserCreationForm):
     email = forms.EmailField()
 
+    def clean_email(self):
+        data = self.cleaned_data['email']
+        if "@stu.sdu.edu.kz" not in data:
+            raise forms.ValidationError("Must be a sdu address")
+        return data
+
     class Meta:
         model = User
         fields = ['username', 'email', 'password1', 'password2']

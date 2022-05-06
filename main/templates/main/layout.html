@@ -44,21 +44,6 @@
 
                     {% if user.is_authenticated %}
                     <div class="dropdown">
-<<<<<<< HEAD
-                    <a class="dropbtn" onclick="myFunction()"> <img class="rounded-circle nav-account-img" src="{{user.profile.image.url}}">
-                      <i class="fa fa-caret-down"></i>
-                    </a>
-                    <div id = "myDropdown" class="dropdown-content">
-                        <a href="{% url 'profile' %}">Profile</a>
-                        <a href="{% url 'post_create' %}">Add Post</a>
-                        <a class="logout" href="{% url 'logout' %}">Logout</a>
-                    </div>
-                  </div>
-              {% else %}
-                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
-              {% endif %}
-=======
                         <a class="dropbtn" onclick="myFunction()"> <img class="rounded-circle nav-account-img"
                                                                         src="{{user.profile.image.url}}">
                             <i class="fa fa-caret-down"></i>
@@ -74,7 +59,6 @@
                     <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
                     {% endif %}
                 </div>
->>>>>>> 098261feddc33ca6cf4f788f1c7e614588812490
             </div>
         </div>
     </nav>
