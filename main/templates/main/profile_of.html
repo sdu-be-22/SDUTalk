@@ -7,7 +7,7 @@
     <h1>Posts of {{name}}</h1>
     {% for post in posts %}
         {% if post.author == name%}
-        <article class="media content-section">
+
           <div class="media-body">
             <div class="article-metadata">
               <a class="mr-2" href="{% url 'profile_of' post.author %}">{{ post.author }}</a>
@@ -20,7 +20,7 @@
                         {{post.full_text}}
                     {% endif %}</p>
           </div>
-        </article>
+
         {% endif %}
     {% endfor %}
 
