@@ -31,3 +31,9 @@ A ___Social media___ for SDUdents to chatting and posting.
 - ✨ Article delete
 - ✨ Article search
 - ✨ Password reset
+
+## Screenshots
+
+![alt text](1.png)
+![alt text](2.png)
+![alt text](3.png)

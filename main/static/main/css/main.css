@@ -192,6 +192,7 @@ footer{
 }
 .footer,
 .push {
+margin-top: 10%;
   height: 50px;
 }
 .footer-content h3{

@@ -7,10 +7,10 @@ Login Page
 {% endblock %}
 
 {% block content %}
-<center style = "margin: 100px auto 0 auto; border: 2px solid black; border-radius: 30px; background-color: rgb(206, 218, 238); width: 350px; padding: 50px 0 50px 0">
+<center style = "margin: 100px auto 0 auto; border: 2px solid black; border-radius: 50px; background-color: rgb(206, 218, 238); width: 350px; padding: 50px 0 50px 0">
 
         <h1 style = "padding-bottom: 30px;">Login Form</h1>
-        <form method="post" style = "width: 200px; text-align: left">
+        <form method="post" style = "width: 300px; text-align: left">
             {% csrf_token %}
             <div class="form-error">{{ form.non_field_errors }}</div>
 
