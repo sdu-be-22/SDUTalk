@@ -40,4 +40,4 @@ A ___Social media___ for SDUdents to chatting and posting.
 
 ## Presentation of project
 
-[a link](https://www.canva.com/design/DAFBFeftcL4/OguLgCMQKMjpwBGXiTsfVQ/view?utm_content=DAFBFeftcL4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+[Here is presentation](https://www.canva.com/design/DAFBFeftcL4/OguLgCMQKMjpwBGXiTsfVQ/view?utm_content=DAFBFeftcL4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
