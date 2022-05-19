@@ -37,3 +37,7 @@ A ___Social media___ for SDUdents to chatting and posting.
 ![alt text](1.png)
 ![alt text](2.png)
 ![alt text](3.png)
+
+## Presentation of project
+
+[a link](https://www.canva.com/design/DAFBFeftcL4/OguLgCMQKMjpwBGXiTsfVQ/view?utm_content=DAFBFeftcL4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
